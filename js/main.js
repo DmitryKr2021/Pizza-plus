@@ -76,22 +76,24 @@
     pizzaNames.push(pizzaObjects[i].name);
   }
   const cards = document.querySelectorAll('.menu__cards');
+  const menuWrap = document.querySelector('.menu__wrap'); //все пиццы
+  const cardsPizza = menuWrap.querySelectorAll('.menu__cards');
 
   //Использовать фильтры
   let filter;
   const menuLabels = document.querySelectorAll('.menu__label');
   for (let mL of menuLabels) {
     mL.onclick = function () {
-      filter = this.getAttribute('filter'); //определить значение фильтра
+      filter = this.getAttribute('data-filter'); //определить значение фильтра
       if (filter == 'any') {
-        for (let card_ of cards) {
+        for (let card_ of cardsPizza) {
           card_.classList.remove('to_hide');
         }
         return;
       }
-      for (let card_ of cards) {
+      for (let card_ of cardsPizza) {
         card_.classList.remove('to_hide');
-        if (filter !== card_.getAttribute('filter')) {
+        if (filter !== card_.getAttribute('data-filter')) {
           card_.classList.add('to_hide');
         }
       }
@@ -125,7 +127,7 @@
   function whatActiveCard() {
     for (let card of cards) {
       card.onmouseover = function () {
-        let cardName = card.getAttribute('name_'); //получить название выбираемой пиццы
+        let cardName = card.getAttribute('data-name_'); //получить название выбираемой пиццы
         let cardNumb = whatCardNumb(cardName); //получить номер карточки пиццы
         const sizes = this.querySelectorAll('.choose__label'); //массив размеров пиццы   
         let quantity = 0; //начальное количество в заказе 
