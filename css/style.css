@@ -527,7 +527,7 @@ td button {
   transform: translateX(-50%);
 }
 
-.menu__cards[name_="drink01"] .img {
+.menu__cards[data-name_="drink01"] .img {
   width: 150px;
 }
 
