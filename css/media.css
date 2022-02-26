@@ -307,7 +307,7 @@
 }
 
 @media only screen and (max-width: 560px) {
-  .header logo {
+  .header__logo {
     margin-left: 5px;
   }
 
@@ -375,7 +375,7 @@
 
 @media only screen and (max-width: 450px) {
 
-  .header logo {
+  .header__logo {
     transform: scale(0.8) translateX(-10px);
   }
 
@@ -419,7 +419,7 @@
 
 @media only screen and (max-width: 370px) {
 
-  .header logo {
+  .header__logo {
     transform: scale(0.6) translateX(-30px);
   }
 
@@ -430,7 +430,7 @@
   .sendvich {
     transform: scale(0.8);
     position: absolute;
-    left: 73%;
+    left: 70%;
   }
 
   .hero__promo {
